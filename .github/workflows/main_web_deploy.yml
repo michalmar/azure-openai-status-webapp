@@ -30,6 +30,6 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mmaopenaistat.azurecr.io/${{ secrets.AzureAppService_ContainerUsername }}/mmaopenaistat-streamlit:${{ github.sha }}
+        tags: mmaopenaistat.azurecr.io/${{ secrets.AzureAppService_ContainerUsername }}/mmaopenaistat-streamlit:latest
         file: ./WebApp.Dockerfile
     
