@@ -32,3 +32,4 @@ jobs:
         push: true
         tags: mmaopenaistat.azurecr.io/${{ secrets.AzureAppService_ContainerUsername }}/mmaopenaistat-streamlit:${{ github.sha }}
         file: ./WebApp.Dockerfile
+    
