@@ -48,7 +48,7 @@ def load_data_from_blob():
 
 
 # Title of the app
-st.title('Azure OpenAI Services Dashboard')
+st.title('Azure OpenAI Services PayGo Stats Dashboard')
 
 # A simple text
 st.write('In this dashboard, we will test the endpoints of Azure OpenAI services and display the results.')
