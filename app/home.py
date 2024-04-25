@@ -48,14 +48,14 @@ def load_data_from_blob():
 
 
 # Title of the app
-st.title('Azure OpenAI Services PayGo Stats Dashboard')
+st.title('Azure OpenAI Services PayGo Stats')
 
 # A simple text
 st.write('In this dashboard, we will test the endpoints of Azure OpenAI services and display the results.')
 
 st.caption("Tthe test sends small request to each endponit found in the resource group, and run against either gpt-4 or gpt-35-turbo model family")
 
-model_family = "gpt-4"
+input_model_family = "gpt-4"
 input_model_family = st.selectbox("Select model family", ["gpt-4", "gpt-35-turbo"])
 
 

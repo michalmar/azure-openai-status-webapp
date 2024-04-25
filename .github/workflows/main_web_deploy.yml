@@ -32,4 +32,21 @@ jobs:
         push: true
         tags: mmaopenaistat.azurecr.io/${{ secrets.AzureAppService_ContainerUsername }}/mmaopenaistat-streamlit:latest
         file: ./WebApp.Dockerfile
-    
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'produciton'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+      
+    steps:
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'ommaopenaistatweb'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
+        images: 'mmaopenaistat.azurecr.io/${{ secrets.AzureAppService_ContainerUsername }}/mmaopenaistat-streamlit:latest' 
